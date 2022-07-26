@@ -1,0 +1,4 @@
+Google Cloud SDK 394.0.0
+bq 2.0.75
+core 2022.07.19
+gsutil 5.11

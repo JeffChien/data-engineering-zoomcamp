@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "data-engineering-zoomcamp"
+version = "0.1.0"
+description = ""
+authors = ["JChien <jeffchien13@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "~3.10"
+pgcli = "^3.4.1"
+pandas = "^1.4.3"
+pyarrow = "^8.0.0"
+SQLAlchemy = "^1.4.39"
+ipython-sql = "^0.4.1"
+click = "^8.1.3"
+
+[tool.poetry.dev-dependencies]
+ipykernel = "^6.15.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -8,24 +8,30 @@ services:
     volumes:
       - pg-volume:/var/lib/postgresql/data:rw
     networks:
-      - pg-network
+      - dtde-network
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "root", "-d", "ny_taxi"]
+      interval: 5s
+      retries: 5
+    restart: always
+
   pgadmin:
     image: dpage/pgadmin4
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
       - PGADMIN_DEFAULT_PASSWORD=root
     networks:
-      - pg-network
+      - dtde-network
     ports:
-      - "8080:80"
+      - "8090:80"
 
 volumes:
   pg-volume:
-    external: false
+    external: true
     name: pg-volume
 
 networks:
-  pg-network:
-    name: pg-network
+  dtde-network:
+    name: dtde-network

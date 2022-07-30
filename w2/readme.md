@@ -15,19 +15,19 @@ Mapping
 
 
 <!-- file links -->
-[f1]: (./0_data_lake.md)
-[f2]: (./1_workflow_ochestration_intro.md)
-[f3]: (./2_airflow_setup.md)
-[f4]: (./3_docker_compose_dissect.md)
-[f5]: (./5_ingesting_data.md)
+[f1]: ./0_data_lake.md
+[f2]: ./1_workflow_ochestration_intro.md
+[f3]: ./2_airflow_setup.md
+[f4]: ./3_docker_compose_dissect.md
+[f5]: ./5_ingesting_data.md
 
 
 <!-- video links -->
-[v2.1.1]: (https://www.youtube.com/watch?v=W3Zm6rjOq70&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=17)
-[v2.2.1]: (https://www.youtube.com/watch?v=0yK7LXwYeD0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=18)
-[v2.3.1]: (https://www.youtube.com/watch?v=lqDMzReAtrw&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=19)
-[v2.3.2]: (https://www.youtube.com/watch?v=9ksX9REfL8w&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=20)
-[v2.3.3]: (https://www.youtube.com/watch?v=s2U8MWJH5xA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=21)
-[v2.3.4]: (https://www.youtube.com/watch?v=A1p5LQ0zzaQ&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=22)
-[v2.4.1]: (https://www.youtube.com/watch?v=rFOFTfD1uGk&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=23)
-[v2.4.2]: (https://www.youtube.com/watch?v=VhmmbqpIzeI&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=24)
+[v2.1.1]: https://www.youtube.com/watch?v=W3Zm6rjOq70&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=17
+[v2.2.1]: https://www.youtube.com/watch?v=0yK7LXwYeD0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=18
+[v2.3.1]: https://www.youtube.com/watch?v=lqDMzReAtrw&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=19
+[v2.3.2]: https://www.youtube.com/watch?v=9ksX9REfL8w&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=20
+[v2.3.3]: https://www.youtube.com/watch?v=s2U8MWJH5xA&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=21
+[v2.3.4]: https://www.youtube.com/watch?v=A1p5LQ0zzaQ&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=22
+[v2.4.1]: https://www.youtube.com/watch?v=rFOFTfD1uGk&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=23
+[v2.4.2]: https://www.youtube.com/watch?v=VhmmbqpIzeI&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=24

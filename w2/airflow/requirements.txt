@@ -1,0 +1,6 @@
+click
+numpy
+pandas
+psycopg2
+pyarrow
+sqlalchemy

@@ -1,0 +1,13 @@
+pg-local:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: 192.168.46.220
+      user: root
+      password: root
+      port: 5432
+      dbname: ny_taxi
+      schema: dbt_staging
+      threads: 4
+      keepalives_idle: 0

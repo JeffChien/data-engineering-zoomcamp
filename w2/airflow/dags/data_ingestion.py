@@ -29,14 +29,17 @@ class DBConf:
         return f"postgresql://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}"
 
 
-def fix_bad_dt(df):
-    cols_names = [
-        "pickup_datetime",
-        "dropOff_datetime",
-        "tpep_pickup_datetime",
-        "tpep_dropoff_datetime",
-    ]
+def ensure_nemeric(df, dtype, cols_names):
+    for cname in cols_names:
+        if cname not in df.columns:
+            continue
+        if dtype == df[cname].dtype:
+            continue
+        df[cname] = pd.to_numeric(df[cname], errors="coerce").fillna(0).astype(dtype)
+    return df
 
+
+def fix_bad_dt(df, cols_names):
     def do_fix(dt):
         if dt.year >= 3000:
             dt = dt.replace(year=dt.year - 1000)
@@ -49,8 +52,48 @@ def fix_bad_dt(df):
             continue
         dt_series = pd.to_datetime(df[cname], errors="coerce")
         mask = dt_series.isnull()
-        dt_series[mask] = df.loc[mask, cname].apply(do_fix)
-        df[cname] = dt_series
+        dt_series[mask] = pd.to_datetime(df.loc[mask, cname].apply(do_fix))
+        df[cname] = dt_series.dt.tz_localize("EST")
+    return df
+
+
+def fix_df(df):
+    df.columns = df.columns.str.lower().str.replace(" ", "_")
+    df = fix_bad_dt(
+        df,
+        [
+            "pickup_datetime",
+            "dropOff_datetime",
+            "tpep_pickup_datetime",
+            "tpep_dropoff_datetime",
+            "lpep_pickup_datetime",
+            "lpep_dropoff_datetime",
+        ],
+    )
+    df = ensure_nemeric(
+        df, "int64", ["vendorid", "pulocationid", "dolocationid", "locationid"]
+    )
+    df = ensure_nemeric(
+        df,
+        "float64",
+        [
+            "passenger_count",
+            "trip_distance",
+            "ratecodeid",
+            "fare_amount",
+            "extra",
+            "mta_tax",
+            "tip_amount",
+            "tolls_amount",
+            "improvement_surcharge",
+            "total_amount",
+            "congestion_surcharge",
+            "airport_fee",
+            "ehail_fee",
+            "payment_type",
+            "trip_type",
+        ],
+    )
     return df
 
 
@@ -94,7 +137,7 @@ def ingest_data(file, db_conf: DBConf, table, batch_size=100000):
     count = 0
     for batch in pq_file.iter_batches(batch_size=batch_size):
         df = batch.to_pandas(timestamp_as_object=True)
-        df = fix_bad_dt(df)
+        df = fix_df(df)
         if runs == 0:
             df.head(0).to_sql(name=table, con=engine, if_exists="replace", index=False)
 

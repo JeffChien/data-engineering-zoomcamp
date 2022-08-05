@@ -1,5 +1,20 @@
 {
   "[markdown]": {
     "editor.formatOnSave": false
-  }
+  },
+  "files.associations": {
+    "*.sql": "jinja-sql"
+  },
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "192.168.46.220",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "postgres",
+      "database": "ny_taxi",
+      "username": "root"
+    }
+  ]
 }

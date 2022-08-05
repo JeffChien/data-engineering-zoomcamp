@@ -8,7 +8,7 @@ Todo
 - [x] [Week1: Introduction & Prerequisites](./w1)
 - [x] [Week2: Data ingestion](./w2)
 - [x] [Week3: Data Warehouse](./w3)
-- [ ] [Week4: Analytics Engineering]() TBD
-- [ ] [Week5: Batch processing]() TBD
+- [x] [Week4: Analytics Engineering](./w4)
+- [x] [Week5: Batch processing](./w5)
 - [ ] [Week6: Streaming]() TBD
 - [ ] [Project]() TBD
